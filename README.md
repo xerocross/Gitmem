@@ -26,3 +26,10 @@ Existing software that might be useful either for inspiration or for open source
 ## Theory
 
 This utility lends itself to studying using a specific kind of what you might call a technique or even an architecture. It's related to the idea of a zettelkasten. In that sense, the utility itself is _opinionated_. It calls for documentation on technique, not just on the basic mechanics of using the utility.
+
+## Design Principles
+See the DESIGN_PRINCIPLES
+
+## Design Principles
+
+See the DESIGN_PRINCIPLES.md [[DESIGN_PRINCIPLES]] file.
