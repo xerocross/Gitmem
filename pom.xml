@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.adamfgcross</groupId>
-	<artifactId>gitmem</artifactId>
+	<artifactId>xeronote</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gitmem</name>
+	<name>xeronote</name>
 	<description>A utility for managing note files for spaced repetition</description>
 	<properties>
 		<java.version>17</java.version>

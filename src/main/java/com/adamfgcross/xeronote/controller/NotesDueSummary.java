@@ -1,7 +1,8 @@
-package com.adamfgcross.gitmem.controller;
+package com.adamfgcross.xeronote.controller;
 
-import com.adamfgcross.gitmem.model.Note;
 import java.util.List;
+
+import com.adamfgcross.xeronote.model.Note;
 
 public interface NotesDueSummary {
 	public List<Note> getNotesDue();

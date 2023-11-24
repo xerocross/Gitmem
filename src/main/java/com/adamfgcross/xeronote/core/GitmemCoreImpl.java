@@ -1,8 +1,10 @@
-package com.adamfgcross.gitmem.core;
+package com.adamfgcross.xeronote.core;
 
 import org.springframework.stereotype.Component;
+
+import com.adamfgcross.xeronote.model.Note;
+
 import java.util.List;
-import com.adamfgcross.gitmem.model.Note;
 
 @Component
 public class GitmemCoreImpl implements GitmemCore {

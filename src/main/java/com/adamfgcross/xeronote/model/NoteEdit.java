@@ -1,4 +1,4 @@
-package com.adamfgcross.gitmem.model;
+package com.adamfgcross.xeronote.model;
 
 import java.time.LocalDateTime;
 

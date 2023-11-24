@@ -1,11 +1,12 @@
-package com.adamfgcross.gitmem.controller;
+package com.adamfgcross.xeronote.controller;
 
-import com.adamfgcross.gitmem.model.NoteDataSummary;
+import com.adamfgcross.xeronote.model.NoteDataSummary;
 
 public interface Controller {
 	
 	public NoteAddResponse addNote();
 	public NoteDataSummary getNoteDataSummary();
 	public NotesDueSummary getNotesDue();
+	public 
 
 }

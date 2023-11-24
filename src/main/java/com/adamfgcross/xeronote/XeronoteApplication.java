@@ -1,13 +1,13 @@
-package com.adamfgcross.gitmem;
+package com.adamfgcross.xeronote;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GitmemApplication {
+public class XeronoteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GitmemApplication.class, args);
+		SpringApplication.run(XeronoteApplication.class, args);
 	}
 
 }

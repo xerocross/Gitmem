@@ -1,6 +1,4 @@
-# Project Gitmem
-
-(I haven't thought of a good name for this project yet.)
+# Xeronote
 
 ## Idea
 
