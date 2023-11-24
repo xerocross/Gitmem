@@ -1,0 +1,15 @@
+Project Gitmem Database
+
+NOTES
+primary key int ID
+
+
+NOTE_REVIEWS
+
+primary key int ID
+foreign key int NOTE_ID
+
+NOTE_EDITS
+
+primary key int ID
+foreign key int NOTE_ID
