@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class NoteEditImpl implements NoteEdit {
@@ -15,8 +18,19 @@ public class NoteEditImpl implements NoteEdit {
 	private LocalDateTime dateTime;
 	private String newHash;
 	
-	public NoteEditImpl(LocalDateTime dateTime, String newHash) {
+	@ManyToOne
+	@JoinColumn(name="note_id")
+	private NoteImpl note;
+	
+	@Autowired
+	public NoteEditImpl(LocalDateTime dateTime, NoteImpl note, String newHash) {
 		this.dateTime = dateTime;
+		this.note = note;
+	}
+	
+	@Override
+	public Note getNote() {
+		return this.note;
 	}
 	
 	@Override

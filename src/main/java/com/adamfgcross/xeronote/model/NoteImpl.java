@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class NoteImpl implements Note {
@@ -14,31 +15,39 @@ public class NoteImpl implements Note {
 	private Long id;
 	
 	private String notePath;
-	private List<NoteReview> reviews;
-	private List<NoteEdit> edits;
+	
+	@OneToMany(mappedBy = "note")
+	private List<NoteReviewImpl> reviews;
+	
+	@OneToMany(mappedBy = "note")
+	private List<NoteEditImpl> edits;
 	
 	
 	public String getNotePath() {
 		return notePath;
+	}
+	
+	public String getHash() {
+		return null;
 	}
 
 	public void setNotePath(String notePath) {
 		this.notePath = notePath;
 	}
 
-	public List<NoteReview> getReviews() {
+	public List<NoteReviewImpl> getReviews() {
 		return reviews;
 	}
 
-	public void setReviews(List<NoteReview> reviews) {
+	public void setReviews(List<NoteReviewImpl> reviews) {
 		this.reviews = reviews;
 	}
 
-	public List<NoteEdit> getEdits() {
+	public List<NoteEditImpl> getEdits() {
 		return edits;
 	}
 
-	public void setEdits(List<NoteEdit> edits) {
+	public void setEdits(List<NoteEditImpl> edits) {
 		this.edits = edits;
 	}
 }

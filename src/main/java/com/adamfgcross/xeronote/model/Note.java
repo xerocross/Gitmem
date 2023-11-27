@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface Note {
 
-	public List<NoteEdit> getEdits();
-	public List<NoteReview> getReviews();
+	public List<? extends NoteEdit> getEdits();
+	public List<? extends NoteReview> getReviews();
 	public String getHash();
 	
 }

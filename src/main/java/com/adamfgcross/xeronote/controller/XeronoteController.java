@@ -1,12 +1,13 @@
 package com.adamfgcross.xeronote.controller;
 
+import java.util.List;
+
 import com.adamfgcross.xeronote.model.NoteDataSummary;
 
-public interface Controller {
+public interface XeronoteController {
 	
-	public NoteAddResponse addNote();
 	public NoteDataSummary getNoteDataSummary();
 	public NotesDueSummary getNotesDue();
-	public 
+	public NoteAddResponse addNotes(List<String> filePaths);
 
 }
