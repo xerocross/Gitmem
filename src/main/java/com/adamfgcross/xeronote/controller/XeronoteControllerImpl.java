@@ -1,30 +1,39 @@
 package com.adamfgcross.xeronote.controller;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import com.adamfgcross.xeronote.core.XeronoteCore;
-import com.adamfgcross.xeronote.core.XeronoteException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.adamfgcross.xeronote.core.*;
 import com.adamfgcross.xeronote.model.NoteDataSummary;
 
 @Controller
 public class XeronoteControllerImpl implements XeronoteController {
-	
+	private static final Logger logger = LoggerFactory.getLogger(XeronoteControllerImpl.class);
 	private XeronoteCore xeronoteCore;
+	
+	@Value("${com.adamfgcross.xeronote.controller.addingNotesLogMessage}")
+	private String addingNotesLogMessage;
+	
+	@Value("${com.adamfgcross.xeronote.controller.exceptionLogMessage}")
+	private String exceptionLogMessage;
 	
 	public XeronoteControllerImpl(XeronoteCore xeronoteCore) {
 		this.xeronoteCore = xeronoteCore;
 	}
 	
 	public NoteAddResponse addNotes(List<String> filePaths) {
-		System.out.println("Controller: Attempting to add notes at the paths:");
-		System.out.println(String.join(" ", filePaths.toArray(new String[0])));
+		logger.info(addingNotesLogMessage + " : " + String.join(" ", filePaths.toArray(new String[0])));
 		try {
-			xeronoteCore.addNoteFromFile(filePaths.get(0));
+			NoteAddResponse response = xeronoteCore.addNotes(filePaths);
+			return response;
 		}
 		catch (XeronoteException ex) {
-			System.out.println("Unhandled app exception");
+			logger.error(exceptionLogMessage + " : " + ex.toString() + ex.getMessage());
 		}
-		
 		return null;
 	}
 	public NoteDataSummary getNoteDataSummary() {

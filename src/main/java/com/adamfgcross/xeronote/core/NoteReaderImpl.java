@@ -24,8 +24,8 @@ public class NoteReaderImpl implements NoteReader<NoteImpl> {
 //		}
 		logger.info("Adding file {}", filePath.toString());
 		NoteImpl note = new NoteImpl();
+		note.setFileName(filePath.getFileName().toString());
 		note.setNotePath(filePath.toString());
-		
 		note.setHash(hashReader.getHash(filePath));
 		logger.info("file hash: {}", note.getHash());
 		return note;

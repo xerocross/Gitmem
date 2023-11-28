@@ -1,5 +1,7 @@
 package com.adamfgcross.xeronote.core;
 
+import java.util.List;
+
 public interface XeronoteCore {
-	public void addNoteFromFile(String fileAddress) throws XeronoteException;
+	public NoteAddResponse addNotes(List<String> fileAddress) throws XeronoteException;
 }

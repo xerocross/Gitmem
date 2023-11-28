@@ -20,8 +20,6 @@ public class CommandLineApp implements CommandLineRunner {
 	
 	@Override
     public void run(String... args) {
-		System.out.println("The IFactory is " + factory);
-		System.out.println("Executing CommandLineApp run: " + String.join(" ", args));
 		CommandLine cmd = new CommandLine(topCommand, factory);
 		cmd.execute(args);
     }

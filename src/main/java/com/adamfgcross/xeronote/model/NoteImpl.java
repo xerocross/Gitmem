@@ -16,14 +16,15 @@ public class NoteImpl implements Note {
 	
 	private String notePath;
 	private String hash;
-	
+	private String fileName;
+		
 	@OneToMany(mappedBy = "note")
 	private List<NoteReviewImpl> reviews;
 	
 	@OneToMany(mappedBy = "note")
 	private List<NoteEditImpl> edits;
 	
-	
+	@Override
 	public String getNotePath() {
 		return notePath;
 	}
@@ -54,5 +55,14 @@ public class NoteImpl implements Note {
 
 	public void setEdits(List<NoteEditImpl> edits) {
 		this.edits = edits;
+	}
+
+	@Override
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 }

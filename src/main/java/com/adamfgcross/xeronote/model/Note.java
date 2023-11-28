@@ -8,5 +8,6 @@ public interface Note {
 	public List<? extends NoteReview> getReviews();
 	public String getHash();
 	public void setHash(String hashString);
-	
+	public String getFileName();
+	public String getNotePath();
 }

@@ -2,6 +2,7 @@ package com.adamfgcross.xeronote.controller;
 
 import java.util.List;
 
+import com.adamfgcross.xeronote.core.NoteAddResponse;
 import com.adamfgcross.xeronote.model.NoteDataSummary;
 
 public interface XeronoteController {
