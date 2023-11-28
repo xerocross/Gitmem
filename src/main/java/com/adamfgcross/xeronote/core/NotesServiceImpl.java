@@ -20,8 +20,7 @@ public class NotesServiceImpl implements NoteService<NoteImpl> {
 	
 	@Override
 	public void addNote(NoteImpl newNote) {
-		NoteImpl noteImpl = (NoteImpl) newNote;
-		notesRepository.save(noteImpl);
+		notesRepository.save(newNote);
 	}
 	
 	@Override

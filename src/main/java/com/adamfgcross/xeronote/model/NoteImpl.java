@@ -15,6 +15,7 @@ public class NoteImpl implements Note {
 	private Long id;
 	
 	private String notePath;
+	private String hash;
 	
 	@OneToMany(mappedBy = "note")
 	private List<NoteReviewImpl> reviews;
@@ -28,7 +29,11 @@ public class NoteImpl implements Note {
 	}
 	
 	public String getHash() {
-		return null;
+		return hash;
+	}
+	
+	public void setHash(String hash) {
+		this.hash = hash;
 	}
 
 	public void setNotePath(String notePath) {

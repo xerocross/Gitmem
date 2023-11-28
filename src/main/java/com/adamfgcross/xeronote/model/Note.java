@@ -7,5 +7,6 @@ public interface Note {
 	public List<? extends NoteEdit> getEdits();
 	public List<? extends NoteReview> getReviews();
 	public String getHash();
+	public void setHash(String hashString);
 	
 }
