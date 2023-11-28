@@ -32,6 +32,10 @@ public class XeronoteCoreImpl implements XeronoteCore {
 		this.noteService = noteService;
 	}
 	
+	public List<? extends Note> getAllNotes() {
+		return noteService.getNotes();
+	}
+	
 	private Note addNoteFromFile(String fileAddress) throws XeronoteException {
 		Path filePath = Path.of(fileAddress);
 		try {

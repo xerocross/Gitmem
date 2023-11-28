@@ -9,5 +9,6 @@ public interface Note {
 	public String getHash();
 	public void setHash(String hashString);
 	public String getFileName();
+	public String getName();
 	public String getNotePath();
 }

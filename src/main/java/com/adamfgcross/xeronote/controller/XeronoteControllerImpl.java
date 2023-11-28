@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adamfgcross.xeronote.core.*;
+import com.adamfgcross.xeronote.model.*;
 import com.adamfgcross.xeronote.model.NoteDataSummary;
 
 @Controller
@@ -41,5 +42,9 @@ public class XeronoteControllerImpl implements XeronoteController {
 	}
 	public NotesDueSummary getNotesDue() {
 		return null;
+	}
+	
+	public List<? extends Note> getAllNotes() {
+		return xeronoteCore.getAllNotes();
 	}
 }
