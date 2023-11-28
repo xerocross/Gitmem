@@ -16,18 +16,35 @@ public class NoteImpl implements Note {
 	private String notePath;
 	private String hash;
 	private String fileName;
+	// name is a unique identifier expected to be the initial part
+	// of the filename without any extension
+	private String name;
 		
 	@OneToMany(mappedBy = "note")
-	private List<NoteReviewImpl> reviews;
+	private List<NoteReviewImpl> reviews = new ArrayList<NoteReviewImpl>();
 	
 	@OneToMany(mappedBy = "note")
-	private List<NoteEditImpl> edits;
+	private List<NoteEditImpl> edits = new ArrayList<NoteEditImpl>();
+	
+	@OneToMany(mappedBy = "originNote", 
+			cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<NoteLinkImpl> linkedNotes = new HashSet<NoteLinkImpl>();
+	
+	
+	public void setLinkedNotes(Set<NoteLinkImpl> linkedNotes) {
+		this.linkedNotes = linkedNotes;
+	}
+	
+	public Set<NoteLinkImpl> getLinkedNotes() {
+		return linkedNotes;
+	}
 	
 	@Override
 	public String getNotePath() {
 		return notePath;
 	}
 	
+	@Override
 	public String getHash() {
 		return hash;
 	}
@@ -40,7 +57,8 @@ public class NoteImpl implements Note {
 		this.notePath = notePath;
 	}
 
-	public List<NoteReviewImpl> getReviews() {
+	@Override
+	public List<? extends NoteReview> getReviews() {
 		return reviews;
 	}
 
@@ -48,7 +66,7 @@ public class NoteImpl implements Note {
 		this.reviews = reviews;
 	}
 
-	public List<NoteEditImpl> getEdits() {
+	public List<? extends NoteEdit> getEdits() {
 		return edits;
 	}
 
@@ -63,5 +81,14 @@ public class NoteImpl implements Note {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }
