@@ -1,0 +1,10 @@
+Xeronote License
+
+Copyright 2023 Adam Cross.
+
+Use at your own risk. I have not yet done the work of checking the
+license of the dependencies. I'm not sure what liberty I have to
+grant or deny anyone a license to use the code yet. Note that this 
+is a project in development quite far from being ready for actual 
+use by anyone. For now, this isn't so much a license as a disclaimer
+about there not being a license.
